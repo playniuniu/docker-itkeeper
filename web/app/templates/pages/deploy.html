@@ -1,0 +1,34 @@
+{% extends "layout/base.html" %}
+{% from "macro/breadcrumb.html" import breadcrumb with context %}
+{% from "macro/deployunit.html" import deployunit with context %}
+
+{%  block page_css %}
+{{ super() }}
+<style>
+    .deploy-section {
+        margin-top: 2em;
+    }
+
+    .widget-user-2 .widget-user-desc {
+        margin-top: 1em;
+    }
+</style>
+{% endblock %}
+
+
+{% block page_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    {{ breadcrumb('快速部署', page_data.breadcrumb) }}
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row deploy-section">
+        {{ deployunit(page_data.deploy_list) }}
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

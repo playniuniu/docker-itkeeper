@@ -1,0 +1,32 @@
+{% extends "layout/base.html" %}
+{% from "macro/breadcrumb.html" import breadcrumb with context %}
+
+{%  block page_css %}
+{{ super() }}
+<style>
+    .btn-recovery {
+        margin-left: 1em;
+    }
+
+    .vmlist-id {
+        width: 40px;
+    }
+</style>
+{% endblock %}
+
+
+{% block page_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    {{ breadcrumb('一键恢复', page_data.breadcrumb) }}
+
+    <!-- Main content -->
+    <section class="content">
+        {% include('components/infobox.html') %}
+        {% include('components/recoverytable.html') %}
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

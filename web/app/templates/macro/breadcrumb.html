@@ -1,0 +1,15 @@
+{% macro breadcrumb(page_title, nav_list) %}
+    <section class="content-header">
+        <h1>{{ page_title }} <small>Version 2.4.0</small></h1>
+
+        <ol class="breadcrumb">
+        {% for nav in nav_list %}
+            {% if nav.last_flag %}
+            <li class="active">{{ nav.name }}</li>
+            {% else %}
+            <li><a href="{{ nav.url }}">{{ nav.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ol>
+    </section>
+{% endmacro %}

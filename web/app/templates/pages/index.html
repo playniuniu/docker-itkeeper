@@ -1,0 +1,37 @@
+{% extends "layout/base.html" %}
+{% from "macro/breadcrumb.html" import breadcrumb with context %}
+
+{% block page_css %}
+{{ super() }}
+<style>
+    #salesChart {
+        height: 200px;
+    }
+
+    .progress-group .progress{
+        margin-top: 3px;
+    }
+</style>
+{% endblock %}
+
+{% block page_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    {{ breadcrumb('系统概览', page_data.breadcrumb) }}
+
+    <!-- Main content -->
+    <section class="content">
+        {% include('components/infobox.html') %}
+        {% include('components/chartbox.html') %}
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}
+
+{% block page_js %}
+{{ super() }}
+    <script src="{{ url_for('static', filename='adminlte/plugins/chartjs/Chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/index.js') }}"></script>
+{% endblock %}

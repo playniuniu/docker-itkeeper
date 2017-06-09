@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+{% from "macro/breadcrumb.html" import breadcrumb with context %}
+
+{%  block page_css %}
+{{ super() }}
+<style>
+    .trans-row {
+        margin-top: 2em;
+    }
+</style>
+{% endblock %}
+
+
+{% block page_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    {{ breadcrumb('业务迁移', page_data.breadcrumb) }}
+
+    <!-- Main content -->
+    <section class="content">
+        {% include 'components/transsurvey.html' %}
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

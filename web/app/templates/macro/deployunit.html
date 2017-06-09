@@ -1,0 +1,22 @@
+{% macro deployunit(deploy_list) %}
+{% for el in deploy_list %}
+<div class="col-md-4">
+    <div class="box box-widget widget-user-2">
+        <div class="widget-user-header">
+            <div class="widget-user-image">
+                <img class="img-circle" src="{{ url_for('static', filename='assets/images/software.png') }}" alt="User Avatar">
+            </div>
+            <h3 class="widget-user-username">{{ el.name }}</h3>
+            <h5 class="widget-user-desc">{{ el.desc }}</h5>
+        </div>
+        <div class="box-footer no-padding">
+            <ul class="nav nav-stacked">
+                <li><a href="#">部署步骤 <span class="pull-right badge bg-green">{{ el.step }}</span></a></li>
+                <li><a href="#">部署要求 <span class="pull-right">无特殊要求</span></a></li>
+                <li><a href="#">开始部署 <span class="pull-right badge bg-aqua-active"><i class="ion ion-arrow-right-c"></i></span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}

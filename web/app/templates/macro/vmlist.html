@@ -1,0 +1,30 @@
+{% macro vmlist(datalist) %}
+{% for vm in datalist %}
+<tr>
+    <td class="text-center vmlist-id">{{ vm.id }}</td>
+    <td>{{ vm.name }}</td>
+    <td>{{ vm.ip }}</td>
+    <td>{{ vm.ports }}</td>
+    <td>
+        <div class="progress progress-xs">
+            <div class="progress-bar progress-bar-info" style="{{ 'width: ' + vm.cpu + '%' }}"></div>
+        </div>
+    </td>
+    <td class="text-center">
+        {% if vm.status == "ok" %}
+        <span class="badge bg-green">正常</span>
+        {% else %}
+        <span class="badge bg-red">当机</span>
+        {% endif %}
+    </td>
+    <td>
+        <a class="btn btn-sm btn-default btn-flat">查看状态</a>
+        {% if vm.status == "ok" %}
+        <a class="btn btn-sm btn-info btn-flat btn-recovery">常规巡检</a>
+        {% else %}
+        <a class="btn btn-sm btn-danger btn-flat btn-recovery">一键恢复</a>
+        {% endif %}
+    </td>
+</tr>
+{% endfor %}
+{% endmacro  %}

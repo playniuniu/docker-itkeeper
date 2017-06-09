@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    {% block page_title %}
+    <title>IT Keeper</title>
+    {% endblock %}
+
+    {%  block page_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/ionicons/css/ionicons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/dist/css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/dist/css/skins/skin-purple-light.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/common.css') }}">
+    {%  endblock %}
+
+</head>
+
+<body class="hold-transition skin-purple-light sidebar-mini">
+    <div class="wrapper">
+    
+    {% block page_header %}
+    {% include "layout/header.html" %}
+    {% endblock %}
+
+    {% block page_sidebar %}
+    {% include "layout/sidebar.html" %}
+    {% endblock %}
+
+    {% block page_content %}
+    {% endblock %}
+
+    {% block page_footer %}
+    {% include "layout/footer.html" %}
+    {% endblock %}
+
+    </div>
+
+    {% block page_js %}
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='adminlte/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='adminlte/plugins/slimScroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='adminlte/plugins/fastclick/fastclick.js') }}"></script>
+    <script src="{{ url_for('static', filename='adminlte/dist/js/adminlte.js') }}"></script>
+    {% endblock %}
+</body>
+
+</html>
