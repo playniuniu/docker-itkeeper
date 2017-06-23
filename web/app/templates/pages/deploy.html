@@ -5,8 +5,25 @@
 {%  block page_css %}
 {{ super() }}
 <style>
+    .deploy-btn-group {
+        margin-top: 1em;
+    }
+
+    .btn-app {
+        height: 75px;
+    }
+    .btn-app:first-child {
+        margin-left: 0;
+    }
+
+    .btn-app > .fa,
+    .btn-app > .glyphicon,
+    .btn-app > .ion {
+        margin-bottom: 10px;
+    }
+
     .deploy-section {
-        margin-top: 2em;
+        padding-top: 10px;
     }
 
     .widget-user-2 .widget-user-desc {
@@ -23,12 +40,27 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="row deploy-section">
-        {{ deployunit(page_data.deploy_list) }}
+
+        <div class="row deploy-btn-group">
+            <div class="col-md-12">
+                <a class="btn btn-app" id="btn-1"><i class="fa fa-gitlab"></i> 持续集成</a>
+                <a class="btn btn-app" id="btn-2"><i class="fa fa-skyatlas"></i> 中间件业务</a>
+                <a class="btn btn-app" id="btn-3"><i class="fa fa-database"></i> 数据库</a>
+                <a class="btn btn-app" id="btn-4"><i class="fa fa-connectdevelop"></i> 大数据挖掘</a>
+            </div>
         </div>
+
+        <div class="row deploy-section"></div>
+
     </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
+{% endblock %}
+
+
+{% block page_js %}
+{{ super() }}
+    <script src="{{ url_for('static', filename='assets/js/deploy.js') }}"></script>
 {% endblock %}
