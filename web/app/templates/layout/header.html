@@ -4,7 +4,7 @@
     <!-- Logo -->
     <a href="{{ url_for( 'main.pages_index' ) }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>I</b>ke</span>
+        <span class="logo-mini"><b>I</b>kp</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>IT</b>keeper</span>
     </a>
@@ -21,13 +21,6 @@
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                    </a>
-                </li>
-
                 <!-- Notifications: style can be found in dropdown.less -->
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -54,7 +47,7 @@
                             <img src="{{ url_for('static', filename='adminlte//dist/img/avatar5.png') }}" class="img-circle" alt="User Image">
                             <p>
                                 {{ page_data.current_user.name }}
-                                <small>暂无消息</small>
+                                <small>最高权限</small>
                             </p>
                         </li>
 

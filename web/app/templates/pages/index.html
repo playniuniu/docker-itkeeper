@@ -22,6 +22,7 @@
     <!-- Main content -->
     <section class="content">
         {% include('components/infobox.html') %}
+        {% include('components/main-list.html') %}
         {% include('components/chartbox.html') %}
     </section>
     <!-- /.content -->
@@ -32,6 +33,7 @@
 
 {% block page_js %}
 {{ super() }}
+    <script src="{{ url_for('static', filename='adminlte/plugins/sparkline/jquery.sparkline.js') }}"></script>
     <script src="{{ url_for('static', filename='adminlte/plugins/chartjs/Chart.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/index.js') }}"></script>
 {% endblock %}

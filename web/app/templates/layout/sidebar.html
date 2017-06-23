@@ -35,6 +35,12 @@
             </li>
 
             <li>
+                <a href="{{ url_for('main.pages_deploy') }}">
+                    <i class="fa fa-paper-plane-o"></i> <span>快速部署</span>
+                </a>
+            </li>
+
+            <li>
                 <a href="{{ url_for('main.pages_recovery') }}">
                     <i class="fa fa-refresh"></i> <span>一键恢复</span>
                     <span class="pull-right-container">
@@ -42,16 +48,10 @@
                     </span>
                 </a>
             </li>
-
-            <li>
-                <a href="{{ url_for('main.pages_deploy') }}">
-                    <i class="fa fa-paper-plane-o"></i> <span>快速部署</span>
-                </a>
-            </li>
-
+            
             <li>
                 <a href="{{ url_for('main.pages_trans') }}">
-                    <i class="fa fa-truck"></i> <span>业务迁移</span>
+                    <i class="fa fa-truck"></i> <span>虚拟化管理</span>
                 </a>
             </li>
 
