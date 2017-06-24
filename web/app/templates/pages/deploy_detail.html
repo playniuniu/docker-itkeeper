@@ -1,0 +1,43 @@
+{% extends "layout/base.html" %}
+{% from "macro/breadcrumb.html" import breadcrumb with context %}
+
+{%  block page_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/ionicons/css/ionicons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/plugins/select2/select2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/dist/css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/dist/css/skins/skin-purple-light.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/common.css') }}">
+    <style>
+        .trans-row {
+            margin-top: 1.5em;
+        }
+    </style>
+{% endblock %}
+
+
+{% block page_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    {{ breadcrumb('快速部署', page_data.breadcrumb) }}
+
+    <!-- Main content -->
+    <section class="content">
+        {% include 'components/deployform.html' %}
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}
+
+{% block page_js %}
+{{ super() }}
+    <script src="{{ url_for('static', filename='adminlte/plugins/select2/select2.full.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+             $(".select2").select2();
+        });
+    </script>
+{% endblock %}

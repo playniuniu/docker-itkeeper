@@ -28,10 +28,12 @@ def breadcrumb(page_data, level1, level2, level3=None):
             'name': '快速部署',
             'url': '/pages/deploy/'
         },
-        'trans': {'name': '业务迁移',
-                  'url': '/pages/trans/'
+        'trans': {
+            'name': '业务迁移',
+            'url': '/pages/trans/'
         },
-        'ports': { 'name': '端口扫描',
+        'ports': {
+            'name': '端口扫描',
             'url': '/pages/ports/'
         },
     }

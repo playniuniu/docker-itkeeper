@@ -16,7 +16,7 @@ var deploy_data = {
     "btn-3": [
         { "name": "MySQL", "desc": "MySQL 5.7 数据库", "method": "Docker", "platform": "Linux", "logo": "mysql" },
         { "name": "MongoDB", "desc": "MongoDB 3.4 NoSQL 数据库", "method": "Docker", "platform": "Linux", "logo": "mongodb" },
-        { "name": "PostgreSQL", "desc": "PostgreSQL 9.6 数据库", "method": "Docker", "platform": "Linux", "logo": "postgre" },
+        { "name": "PostgreSQL", "desc": "PostgreSQL 9.6 数据库", "method": "Docker", "platform": "Linux", "logo": "postgresql" },
         { "name": "Redis", "desc": "Redis 内存数据库", "method": "Docker", "platform": "Linux", "logo": "redis" },
         { "name": "Oracle", "desc": "Oracle 12g 数据库", "method": "Script", "platform": "Linux", "logo": "oracle" },
     ],
@@ -51,9 +51,9 @@ var generate_list = function(id) {
         </div>
         <div class="box-footer no-padding">
             <ul class="nav nav-stacked">
-                <li><a href="#">部署平台 <span class="pull-right badge bg-green">${val.platform}</span></a></li>
-                <li><a href="#">部署方式 <span class="pull-right">${val.method}</span></a></li>
-                <li><a href="#">开始部署 <span class="pull-right badge bg-aqua-active"><i class="ion ion-arrow-right-c"></i></span></a></li>
+                <li><a href="/pages/deploy/${val.name}">部署平台 <span class="pull-right badge bg-green">${val.platform}</span></a></li>
+                <li><a href="/pages/deploy/${val.name}">部署方式 <span class="pull-right">${val.method}</span></a></li>
+                <li><a href="/pages/deploy/${val.name}">开始部署 <span class="pull-right badge bg-aqua-active"><i class="ion ion-arrow-right-c"></i></span></a></li>
             </ul>
         </div>
     </div>

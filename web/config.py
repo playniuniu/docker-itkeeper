@@ -4,6 +4,7 @@ PAGE_DATA = {
     "current_user": {
         "name": "管理员",
     },
+    "docker_url": "unix://var/run/docker.sock",
     "vmlist": [
         {
             "id": 1,
@@ -89,21 +90,6 @@ PAGE_DATA = {
             "desc": "公安物证管理系统",
             "step": "3",
         },
-        # {
-        #     "name": "人员管理",
-        #     "desc": "重点人员管理平台",
-        #     "step": "3",
-        # },
-        # {
-        #     "name": "驾驶人管理",
-        #     "desc": "驾驶人培训学习计时管理系统",
-        #     "step": "3",
-        # },
-        # {
-        #     "name": "交警监管",
-        #     "desc": "交警业务监管回访系统",
-        #     "step": "3",
-        # },
         {
             "name": "装财平台",
             "desc": "公安装备财务服务平台",

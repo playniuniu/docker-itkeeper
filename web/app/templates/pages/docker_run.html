@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+{% from "macro/breadcrumb.html" import breadcrumb with context %}
+
+{%  block page_css %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/xterm/xterm.css') }}">
+    <style>
+        .docker-run-row {
+            margin-top: 1.5em;
+        }
+    </style>
+{% endblock %}
+
+
+{% block page_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    {{ breadcrumb('快速部署', page_data.breadcrumb) }}
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row docker-run-row">
+            <div class="col-xs-12">
+                <div id="terminal"></div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}
+
+{% block page_js %}
+{{ super() }}
+    <script src="{{ url_for('static', filename='vendor/xterm/xterm.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/docker_run.js') }}"></script>
+{% endblock %}
