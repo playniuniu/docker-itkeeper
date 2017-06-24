@@ -42,16 +42,18 @@ def pages_trans():
     return render_template('pages/trans.html', page_data=page_data)
 
 
-@main.route('pages/run/', methods=['GET', 'POST'])
-def pages_run():
-    if request.method == "POST":
-        docker_args = {
-            "domain_name": request.form.get('domain', 'base_domain'),
-            "domain_password": request.form.get('password', 'welcome1')
-        }
-        run_docker("weblogic", docker_args)
-        return redirect(url_for('main.pages_run'))
-    else:
-        page_data = get_page_data()
-        page_data = breadcrumb(page_data, 'index', 'trans')
-        return render_template('pages/docker_run.html', page_data=page_data)
+@main.route('pages/terminal/')
+def pages_terminal():
+    page_data = get_page_data()
+    page_data = breadcrumb(page_data, 'index', 'trans')
+    return render_template('pages/terminal.html', page_data=page_data)
+
+
+@main.route('pages/run/', methods=['POST'])
+def pages_run_post():
+    docker_args = {
+        "domain_name": request.form.get('domain', 'base_domain'),
+        "domain_password": request.form.get('password', 'welcome1')
+    }
+    run_docker("weblogic", docker_args)
+    return redirect(url_for('main.pages_terminal'))

@@ -6,8 +6,8 @@ var init_terminal = function() {
 }
 
 var init_websocket = function(term) {
-    var ws_url = "ws://" + window.location.host + "/ws/docker"
-    // var ws_url = "ws://127.0.0.1:8001/docker";
+    var ws_url = "ws://" + window.location.host + "/ws/terminal"
+    // var ws_url = "ws://127.0.0.1:8001";
     var ws = new WebSocket(ws_url);
 
     ws.onopen = function(event) {

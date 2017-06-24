@@ -5,7 +5,7 @@
 {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/xterm/xterm.css') }}">
     <style>
-        .docker-run-row {
+        .terminal-row {
             margin-top: 1.5em;
         }
 
@@ -23,7 +23,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="row docker-run-row">
+        <div class="row terminal-row">
             <div class="col-xs-12">
                 <div id="terminal"></div>
             </div>
@@ -40,5 +40,5 @@
     <script src="{{ url_for('static', filename='vendor/xterm/xterm.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/xterm/addons/fit/fit.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/xterm/addons/attach/attach.js') }}"></script>
-    <script src="{{ url_for('static', filename='assets/js/docker_run.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/terminal.js') }}"></script>
 {% endblock %}
