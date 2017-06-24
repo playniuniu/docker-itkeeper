@@ -8,6 +8,10 @@
         .docker-run-row {
             margin-top: 1.5em;
         }
+
+        .terminal {
+            height: 450px;
+        }
     </style>
 {% endblock %}
 
@@ -34,5 +38,7 @@
 {% block page_js %}
 {{ super() }}
     <script src="{{ url_for('static', filename='vendor/xterm/xterm.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/xterm/addons/fit/fit.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/xterm/addons/attach/attach.js') }}"></script>
     <script src="{{ url_for('static', filename='assets/js/docker_run.js') }}"></script>
 {% endblock %}
