@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from flask import current_app
-from time import sleep
-import logging
 
 
 def get_page_data():
@@ -47,13 +45,3 @@ def breadcrumb(page_data, level1, level2, level3=None):
 
     page_data['breadcrumb'][-1]['last_flag'] = True
     return page_data
-
-
-def send_websocket_data(ws):
-    while True:
-        try:
-            ws.send("niuniu\r\n")
-            sleep(1)
-        except BrokenPipeError as e:
-            logging.info("websocket closed")
-            break

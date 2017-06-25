@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template
 from .utilities import get_page_data, breadcrumb
-from .deploy import run_docker
 
 main = Blueprint('main', __name__)
 
@@ -42,18 +41,9 @@ def pages_trans():
     return render_template('pages/trans.html', page_data=page_data)
 
 
-@main.route('pages/terminal/')
-def pages_terminal():
+@main.route('pages/terminal/<container_id>')
+def pages_terminal(container_id):
     page_data = get_page_data()
     page_data = breadcrumb(page_data, 'index', 'trans')
+    page_data['container_id'] = container_id
     return render_template('pages/terminal.html', page_data=page_data)
-
-
-@main.route('pages/run/', methods=['POST'])
-def pages_run_post():
-    docker_args = {
-        "domain_name": request.form.get('domain', 'base_domain'),
-        "domain_password": request.form.get('password', 'welcome1')
-    }
-    run_docker("weblogic", docker_args)
-    return redirect(url_for('main.pages_terminal'))

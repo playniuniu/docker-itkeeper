@@ -5,12 +5,38 @@
 {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/xterm/xterm.css') }}">
     <style>
+        .terminal-header {
+            background-color: #fff;
+            padding: 20px 0;
+            margin-top: 10px;
+        }
+
+        .terminal-header img {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 0 10px 0 0;
+        }
+
+        .terminal-header h3 {
+            display: inline-block;
+            line-height: 50px;
+            margin: 0;
+            font-size: 18px;
+            vertical-align: center;
+        }
+
+        .terminal-header .btn {
+            margin-top: 8px;
+            margin-right: 5px;
+        } 
+
         .terminal-row {
             margin-top: 1.5em;
         }
 
         .terminal {
-            height: 450px;
+            min-height: 400px;
         }
     </style>
 {% endblock %}
@@ -23,9 +49,16 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="row terminal-header">
+            <div class="col-xs-12">
+                <img src="/assets/images/logos/oracle.png">
+                <h3>Weblogic 部署</h3>
+                <a href="" class="btn btn-primary pull-right">去查看</a>
+            </div>
+        </div>
         <div class="row terminal-row">
             <div class="col-xs-12">
-                <div id="terminal"></div>
+                <div id="terminal" data-container="{{ page_data.container_id }}"></div>
             </div>
         </div>
     </section>
