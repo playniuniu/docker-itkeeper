@@ -3,7 +3,7 @@
 ### Run
 
 ```bash
-docker run -d --name itkeeper -p 9006:8000 playniuniu/itkeeper 
+docker run -d --name itkeeper -p 9010:9010 playniuniu/itkeeper 
 ```
 
 ### Nginx
@@ -18,7 +18,7 @@ server {
     access_log /var/log/nginx/example.log;
 
     location / {
-        proxy_pass http://127.0.0.1:8000/;
+        proxy_pass http://127.0.0.1:9010/;
         proxy_redirect     off;
         proxy_set_header   Host                 $host;
         proxy_set_header   X-Real-IP            $remote_addr;
