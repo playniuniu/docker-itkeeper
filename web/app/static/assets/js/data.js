@@ -1,4 +1,4 @@
-var api_base_url = "127.0.0.1:9011"
+var api_base_url = location.hostname + ":9011"
 
 var deploy_data = {
     "btn-1": [
