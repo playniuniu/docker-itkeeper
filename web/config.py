@@ -4,7 +4,6 @@ PAGE_DATA = {
     "current_user": {
         "name": "管理员",
     },
-    "docker_url": "unix://var/run/docker.sock",
     "vmlist": [
         {
             "id": 1,

@@ -2,13 +2,13 @@ var init_terminal = function() {
     var term = new Terminal();
     term.open(document.getElementById('terminal'));
     term.fit();
+    term.clear();
     return term;
 }
 
 var init_websocket = function(term) {
     var container_id = $("#terminal").data("container")
-    // var ws_url = "ws://" + window.location.host + "/ws/terminal"
-    var ws_url = "ws://127.0.0.1:8001/v1/ws/log/" + container_id;
+    var ws_url = "ws://" + api_base_url + "/v1/ws/log/" + container_id;
     var ws = new WebSocket(ws_url);
 
     ws.onopen = function(event) {
@@ -27,15 +27,16 @@ var init_websocket = function(term) {
     return ws;
 }
 
-var refresh_screen = function(term) {
-    var interval_id = setInterval(function(){
-        term.clear();
-        
-    }, 1000);
-    return interval_id;
+var init_btn = function() {
+    var run_port = 8001;
+    var run_url = "http://" + location.hostname + ":" + run_port + "/console";
+    $("#checkrun").on("click", function(e) {
+        window.open(run_url,'_blank');
+    });
 }
 
 $(document).ready(function () {
+    init_btn();
     var term = init_terminal();
     var ws = init_websocket(term);
     term.attach(ws, false, false);
