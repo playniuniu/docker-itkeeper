@@ -4,9 +4,9 @@ var deploy_data = {
     "btn-1": [
         { "name": "Jenkins", "desc": "Jenkins 持续集成服务", "method": "Docker", "platform": "Linux", "logo": "jenkins" },
         { "name": "Gitlab", "desc": "Gitlab 版本控制服务", "method": "Docker", "platform": "Linux", "logo": "gitlab" },
+        { "name": "Gogs", "desc": "Gitlab 版本控制服务", "method": "Docker", "platform": "Linux", "logo": "gogs" },
         { "name": "Selenium", "desc": "Selenium 自动化测试平台", "method": "Docker", "platform": "Linux", "logo": "selenium" },
         { "name": "Nginx", "desc": "Nginx 反向代理服务", "method": "Docker", "platform": "Linux", "logo": "nginx" },
-        { "name": "Apache", "desc": "HTTP/HTTPS 网页服务", "method": "Docker", "platform": "Linux", "logo": "apache" },
     ],
     "btn-2": [
         { "name": "Weblogic", "desc": "Weblogic Java 中间件业务", "method": "Docker", "platform": "Linux", "logo": "oracle" },
@@ -23,6 +23,13 @@ var deploy_data = {
         { "name": "Oracle", "desc": "Oracle 12g 数据库", "method": "Script", "platform": "Linux", "logo": "oracle" },
     ],
     "btn-4": [
+        { "name": "Odoo", "desc": "企业 CRM 管理系统", "method": "Docker", "platform": "Linux", "logo": "odoo" },
+        { "name": "OpenVPN", "desc": "企业内网 VPN 服务", "method": "Docker", "platform": "Linux", "logo": "openvpn" },
+        { "name": "Wowza", "desc": "Wowza 实时流媒体平台", "method": "Docker", "platform": "Linux", "logo": "wowza" },
+        { "name": "nextCloud", "desc": "nextCloud 企业办公云平台", "method": "Script", "platform": "Linux", "logo": "nextcloud" },
+        { "name": "Rocket.Chat", "desc": "Rocket.Chat 企业内网协作工具", "method": "Docker", "platform": "Linux", "logo": "rocketchat" },
+    ],
+    "btn-5": [
         { "name": "Jupyter", "desc": "Jupyter 金融工具箱", "method": "Docker", "platform": "Linux", "logo": "jupyter" },
         { "name": "Elastic", "desc": "Elastic Search 搜索服务", "method": "Docker", "platform": "Linux", "logo": "elasticsearch" },
         { "name": "Spark", "desc": "Spakr 内存型大叔剧平台", "method": "Docker", "platform": "Linux", "logo": "spark" },

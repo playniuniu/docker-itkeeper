@@ -36,6 +36,7 @@ var init_btn = function() {
 }
 
 $(document).ready(function () {
+    init_sidebar("#deploy");
     init_btn();
     var term = init_terminal();
     var ws = init_websocket(term);

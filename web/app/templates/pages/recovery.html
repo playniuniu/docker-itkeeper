@@ -30,3 +30,8 @@
 <!-- /.content-wrapper -->
 
 {% endblock %}
+
+{% block page_js %}
+{{ super() }}
+    <script src="{{ url_for('static', filename='assets/js/recovery.js') }}"></script>
+{% endblock %}

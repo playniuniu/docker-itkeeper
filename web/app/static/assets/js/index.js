@@ -7,7 +7,7 @@ var init_charts = function () {
     var salesChartData = {
         labels: ['十一月','十二月', '一月', '二月', '三月', '四月'],
         datasets: [{
-            label: '在线业务数量',
+            label: '业务请求',
             fillColor: 'rgb(210, 214, 222)',
             strokeColor: 'rgb(210, 214, 222)',
             pointColor: 'rgb(210, 214, 222)',
@@ -16,7 +16,7 @@ var init_charts = function () {
             pointHighlightStroke: 'rgb(220,220,220)',
             data: [65, 59, 80, 81, 56, 55, 40]
         }, {
-            label: '在线虚机数量',
+            label: '业务相应',
             fillColor: 'rgba(60,141,188,0.9)',
             strokeColor: 'rgba(60,141,188,0.8)',
             pointColor: '#3b8bba',
@@ -86,32 +86,32 @@ var init_piechart = function() {
     var pieChartCanvas = $('#pieChart').get(0).getContext('2d');
     var pieChart = new Chart(pieChartCanvas);
     var PieData = [{
-        value: 700,
+        value: 70,
         color: '#f56954',
         highlight: '#f56954',
         label: 'Chrome'
     }, {
-        value: 500,
+        value: 50,
         color: '#00a65a',
         highlight: '#00a65a',
         label: 'IE'
     }, {
-        value: 400,
+        value: 40,
         color: '#f39c12',
         highlight: '#f39c12',
         label: 'FireFox'
     }, {
-        value: 600,
+        value: 60,
         color: '#00c0ef',
         highlight: '#00c0ef',
         label: 'Safari'
     }, {
-        value: 300,
+        value: 30,
         color: '#3c8dbc',
         highlight: '#3c8dbc',
         label: 'Opera'
     }, {
-        value: 100,
+        value: 10,
         color: '#d2d6de',
         highlight: '#d2d6de',
         label: 'Navigator'
@@ -140,7 +140,7 @@ var init_piechart = function() {
         // String - A legend template
         legendTemplate: '<ul class=\'<%=name.toLowerCase()%>-legend\'><% for (var i=0; i<segments.length; i++){%><li><span style=\'background-color:<%=segments[i].fillColor%>\'></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>',
         // String - A tooltip template
-        tooltipTemplate: '<%=value %> <%=label%> users'
+        tooltipTemplate: '<%=value %> GB'
     };
     // Create pie or douhnut chart
     // You can switch between pie and douhnut using the method below.
@@ -148,6 +148,7 @@ var init_piechart = function() {
 }
 
 $(document).ready(function () {
+    init_sidebar("#index");
     init_sparkbar();
     init_piechart();
     init_charts();

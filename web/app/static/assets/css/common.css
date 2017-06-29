@@ -5,3 +5,11 @@
 .info-box-number small {
     font-size: 10px;
 }
+
+.skin-purple-light .sidebar-form {
+    margin-bottom: 15px;
+}
+
+.skin-purple-light .sidebar-menu > li.active > a {
+    background: #e4e4e4;
+}

@@ -34,5 +34,6 @@ var init_from = function() {
 }
 
 $(document).ready(function(){
+    init_sidebar("#deploy");
     init_from();
 });

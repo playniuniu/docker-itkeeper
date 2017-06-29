@@ -46,6 +46,7 @@ var init_btn = function() {
 }
 
 $(document).ready(function () {
+    init_sidebar("#deploy");
     init_btn();
     $("#btn-1").click();
 });
