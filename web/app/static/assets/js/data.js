@@ -32,7 +32,7 @@ var deploy_data = {
     "btn-5": [
         { "name": "Jupyter", "desc": "Jupyter 金融工具箱", "method": "Docker", "platform": "Linux", "logo": "jupyter" },
         { "name": "Elastic", "desc": "Elastic Search 搜索服务", "method": "Docker", "platform": "Linux", "logo": "elasticsearch" },
-        { "name": "Spark", "desc": "Spakr 内存型大叔剧平台", "method": "Docker", "platform": "Linux", "logo": "spark" },
+        { "name": "Spark", "desc": "Spark 内存型大数据平台", "method": "Docker", "platform": "Linux", "logo": "spark" },
         { "name": "Hadoop", "desc": "Hadoop 大数据平台", "method": "Script", "platform": "Linux", "logo": "hadoop" },
         { "name": "Tensorflow", "desc": "Tensorflow 机器学习平台", "method": "Docker", "platform": "Linux", "logo": "tensorflow" },
     ],

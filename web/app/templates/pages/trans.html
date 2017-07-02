@@ -25,3 +25,13 @@
 <!-- /.content-wrapper -->
 
 {% endblock %}
+
+
+{% block page_js %}
+{{ super() }}
+    <script>
+        $(document).ready(function () {
+            init_sidebar("#trans");
+        });
+    </script>
+{% endblock %}
